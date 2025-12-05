@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu e Carrossel de Fotos</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+        </style>   
+</head>
+<body class="quicksand_formatacao_texto">
+
+    <header>
+        <nav class="menu-navegacao" aria-label="Menu principal">
+            <div class="logo">
+                <a href="#inicio">
+                    <img src="./img/icon.png" alt="Logotipo da loja">
+                </a>
+            </div>
+            <ul>
+                <li><a href="#femininas">Femininas</a></li>
+                <li><a href="#masculinas">Masculinas</a></li>
+                <li><a href="#acessorios">Acessórios</a></li>
+                <li><a href="html/contato.html
+                    ">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <div class="carrossel-container">
+        <div class="carrossel-slide fade">
+            <img src="./img/2.png" alt="Banner 1">
+        </div>
+        
+        <div class="carrossel-slide fade">
+            <img src="./img/3.png" alt="Banner 2">
+        </div>
+        
+        <div class="carrossel-slide fade">
+            <img src="./img/4.png" alt="Banner 3">
+        </div>
+
+        <a class="prev" onclick="mudarSlide(-1)">&#10094;</a>
+        <a class="next" onclick="mudarSlide(1)">&#10095;</a>
+        
+        <div style="text-align:center" class="carrossel-dots">
+            <span class="dot" onclick="slideAtual(1)"></span> 
+            <span class="dot" onclick="slideAtual(2)"></span> 
+            <span class="dot" onclick="slideAtual(3)"></span> 
+        </div>
+    </div>
+
+    <main>
+        <section class="produtos-secao" id="femininas">
+            <h2> Roupas Femininas</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="../morgana/img/lenço com capuz.jpg" alt="lenço com capuz">
+                    <h3>lenço com capuz</h3>
+                    <p>R$ 79,99</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card">
+                    <img src="../morgana/img/conjunto animal print.jpg" alt="Conjunto animal print">
+                    <h3>Conjunto animal print</h3>
+                    <p>R$ 124,99</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card">
+                    <img src="../morgana/img/estrela.jpg" alt="Blusa estrelas">
+                    <h3>Blusa estrelas</h3>
+                    <p>R$ 50,00</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card">
+                    <img src="../morgana/img/blusa de frio cruz.jfif" alt="Blusa de frio de cruz">
+                    <h3>Blusa de frio de cruz</h3>
+                    <p>R$ 99,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="produtos-secao" id="masculinas">
+            <h2> Roupas Masculinas</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="../morgana/img/calça moletom.jfif" alt="Calça moletom">
+                    <h3>Calça moletom</h3>
+                    <p>R$ 79,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card">
+                    <img src="../morgana/img/baby tee masculina.jpg" alt="Baby tee masculina">
+                    <h3>Baby tee masculina</h3>
+                    <p>R$ 69,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card">
+                    <img src="../morgana/img/jeans reta cinza.webp" alt="Calça Jeans reta cinza">
+                    <h3>Calça Jeans reta cinza</h3>
+                    <p>R$ 79,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card">
+                    <img src="../morgana/img/bermuda moletom.jpg" alt="Bermuda moletom">
+                    <h3>Bermuda moletom</h3>
+                    <p>R$ 189,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="produtos-secao" id="acessorios">
+            <h2> Acessórios</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="../morgana/img/Anel prata om.jfif" alt="Anel prata om">
+                    <h3>Anel prata om</h3>
+                    <p>R$ 59,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card">
+                    <img src="../morgana/img/Bracelete de braço sol.jfif" alt="Bracelete de braço sol">
+                    <h3>Bracelete de braço sol</h3>
+                    <p>R$ 45,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card">
+                    <img src="../morgana/img/brincos de vampiro.jfif" alt="Brincos de vampiro">
+                    <h3>Brincos de vampiro</h3>
+                    <p>R$ 119,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+                <div class="card">
+                    <img src="../morgana/img/Durag veludo preta.jfif" alt="Durag veludo preta">
+                    <h3>Durag veludo preta</h3>
+                    <p>R$ 39,90</p>
+                    <button>Ver Detalhes</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="./js/carossel.js"></script>
+
+    <footer class="footer">
+        <section class="footer_secao" >
+
+            <div class="footer_div">
+                <h4>NÓS</h4>
+                <p> A <strong>S7ven</strong> surgiu com a proposta de oferecer um novo olhar sobre o consumo dos nossos produtos. Aqui, cada peça de roupa é escolhida com cuidado e ganha a chance de escrever uma nova história. Com um acervo que vai de roupas e acessórios, a loja se destaca pela diversidade.
+                </p>
+            </div>
+
+            <div class="footer_div">
+                <h4>Redes Sociais</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Whatsapp</a></li>
+                </ul>
+            </div>
+        </footer>
+
+</body>
+</html>

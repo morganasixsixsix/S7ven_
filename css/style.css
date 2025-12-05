@@ -1,0 +1,375 @@
+.quicksand_formatacao_texto{
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+/* --- Estilos Gerais (Reset Básico) --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* --- Estilos do Menu de Navegação (ATUALIZADO) --- */
+header {
+    background-color: #E5E5E5;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* Navegação como flex para maior controle */
+.menu-navegacao ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.menu-navegacao ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.menu-navegacao ul li a:hover,
+.menu-navegacao ul li a:focus {
+    background-color: #56578b;
+    border-radius: 5px;
+}
+
+/* Responsivo básico */
+@media (max-width: 768px) {
+    .menu-navegacao {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-navegacao ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+/* --- Estilos do Carrossel (Banner) --- */
+.carrossel-container {
+    max-width: 100%; 
+    position: relative; 
+    margin: auto;
+    overflow: hidden; 
+    /* AJUSTADO: Remove a margem para cálculo de 100vh limpo */
+    margin-bottom: 0; 
+    /* NOVO: Altura total da tela menos a altura do cabeçalho (aprox. 70px) */
+    height: calc(100vh - 70px); 
+}
+
+/* Estilo para cada slide */
+.carrossel-slide {
+    display: none; 
+    /* AJUSTADO: Define a altura com base no contêiner */
+    height: 100%; 
+    max-height: none; /* Remove o max-height fixo */
+    overflow: hidden; 
+}
+
+/* Estilo da Imagem dentro do slide */
+.carrossel-slide img {
+    width: 100%; 
+    /* AJUSTADO: A imagem preenche a altura do slide */
+    height: 100%; 
+    display: block;
+    object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+}
+
+/* Botões de Avançar e Voltar (Anterior/Próximo) */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Posiciona o botão "Próximo" à direita */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Efeito ao passar o mouse sobre as setas */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* --- Estilos dos Indicadores (Pontos) --- */
+.carrossel-dots {
+    position: absolute;
+    bottom: 10px; 
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Cor do ponto ativo e hover */
+.active, .dot:hover {
+    background-color: #001F54;
+}
+
+/* Efeito de Animação para o slide (opcional) */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+
+/* --- Estilos das Seções de Produtos --- */
+
+main {
+    padding: 0; 
+    max-width: 100%; 
+    margin: 0 auto;
+}
+
+.produtos-secao {
+    /* NOVO: Altura mínima igual à altura total da janela de visualização */
+    min-height: 100vh; 
+    
+    /* Configurações Flexbox para Centralizar Conteúdo (Opcional, mas recomendado para 100vh) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    
+    padding: 40px 0;
+    text-align: center;
+}
+
+.produtos-secao h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Cores de Fundo Específicas e Transição de Borda */
+
+/* Femininas: Rosa/Magenta - Borda da cor Masculinas */
+#femininas {
+    background-color: #56578b; /* COR FEMININO */
+    border-bottom: 20px solid #213457; /* Cor da próxima seção (Masculinas) */
+    color: white; /* Texto branco para contraste */
+}
+
+/* Ajusta o título da seção feminina para branco */
+#femininas h2 {
+    color: white; 
+    border-bottom: 5px solid white;
+}
+
+/* Masculinas: Azul Ciano - Borda da cor Infantis */
+#masculinas {
+    background-color: #213457   ; /* COR MASCULINO */
+    border-bottom: 20px solid #E5E5E5; /* Cor da próxima seção (Infantis) */
+    color: white; /* Texto branco para contraste */
+}
+
+/* Ajusta o título da seção masculina para branco */
+#masculinas h2 {
+    color: white; 
+    border-bottom: 5px solid white;
+    
+}
+
+/* Infantis: Rosa Claro (última seção) */
+#acessorios {
+    background-color: #E5E5E5; /* COR INFANTIL */
+}
+
+/* Contêiner interno para centralizar o conteúdo e cards */
+.cards-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; /* Centraliza os cards */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Adiciona o padding nas laterais do conteúdo */
+}
+
+/* --- Estilos dos Cards de Produto --- */
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Aumentei o padding interno */
+    
+    /* NOVO: Aumento da Largura (de 250px para 300px) */
+    width: 300px; 
+    
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    
+    /* NOVO: Aumento da Altura da Imagem (de 200px para 250px) */
+    height: 250px; 
+    
+    object-fit: cover; 
+    border-radius: 6px;
+    margin-bottom: 15px; /* Aumentei a margem inferior */
+}
+
+.card h3 {
+    font-size: 1.2em;
+    color: #142d5c;
+    margin: 10px 0 5px 0;
+}
+
+.card p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #213457;
+    margin: 5px 0 15px 0;
+}
+
+.card button {
+    background-color: #697a9b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #213457;
+}
+
+/* Esconde a tag hr, já que estamos usando border-bottom para a transição */
+hr {
+    display: none; 
+}
+
+footer {
+    background-color:  #001F54;
+    color: #FDF5E6;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.footer_secao {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer_div {
+    flex: 1 1 250px;
+}
+
+.footer_div h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #FDF5E6;
+}
+
+.footer_div p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer_div ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer_div ul li {
+    margin-bottom: 8px;
+}
+
+.footer_div ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.footer_div ul li a:hover {
+    color: #2655ac;
+}
+
+.footer_paragrafo {
+    border-top: 1px solid #1337;
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 25px;
+    padding-top: 15px;
+    text-align: center;
+
+
+}
